@@ -8,6 +8,7 @@
 .container {
   height: 100vh;
   background: blue;
+  position: relative;
 }
 
 .sun {
@@ -18,8 +19,8 @@
   border-radius: 100%;
   -webkit-box-shadow: 2px 2px 10px yellow;
           box-shadow: 2px 2px 10px yellow;
-  -webkit-animation: pulse 10s ease-in-out infinite alternate, position 10s linear infinite alternate;
-          animation: pulse 10s ease-in-out infinite alternate, position 10s linear infinite alternate;
+  -webkit-animation: pulse 10s ease-in-out infinite alternate, positionSun 10s linear infinite alternate;
+          animation: pulse 10s ease-in-out infinite alternate, positionSun 10s linear infinite alternate;
 }
 
 @-webkit-keyframes pulse {
@@ -46,7 +47,7 @@
   }
 }
 
-@-webkit-keyframes position {
+@-webkit-keyframes positionSun {
   0%,
   100% {
     -webkit-transform: translate(0, 0);
@@ -62,7 +63,7 @@
   }
 }
 
-@keyframes position {
+@keyframes positionSun {
   0%,
   100% {
     -webkit-transform: translate(0, 0);
@@ -118,7 +119,8 @@ h2 {
 
 .flower {
   position: absolute;
-  top: 40%;
+  top: 50%;
+  left: 50%;
   height: 30vw;
   width: 1vw;
   background: green;
@@ -151,8 +153,8 @@ h2 {
   width: 12vw;
   background: purple;
   border-radius: 100%;
-  left: -5rem;
-  top: -5rem;
+  left: -5vw;
+  top: -40%;
   -webkit-animation: pulse 3s infinite ease-out alternate;
           animation: pulse 3s infinite ease-out alternate;
 }
@@ -175,7 +177,7 @@ h2 {
   width: 4vw;
   background: #048000;
   border-radius: 50% 17%;
-  left: 0.5rem;
-  top: 14rem;
+  left: 1vw;
+  top: 40%;
 }
 /*# sourceMappingURL=style.css.map */
