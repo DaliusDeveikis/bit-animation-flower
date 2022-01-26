@@ -1,0 +1,119 @@
+@import 'var';
+@import 'mixin';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  background: $blueBackground:;
+}
+
+.sun {
+  padding: 3vw;
+  @include heightWidth(5vw,5vw);
+  background: $yellowBackground;
+  border-radius: 100%;
+  box-shadow: 2px 2px 10px $yellowBackground;
+  animation: pulse 10s ease-in-out infinite alternate,
+    positionSun 10s linear infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: $yellowBackground;
+  }
+
+  70% {
+    background-color: $yellowBackground;
+  }
+
+  100% {
+    background-color: $blueBackground:;
+  }
+}
+
+@keyframes positionSun {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5rem, 0);
+  }
+  100% {
+    transform: translate(-5rem, 0);
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  animation: fadein 5s forwards infinite;
+  margin-bottom: 10rem;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.flower-container {
+  @include flexCenter;
+}
+
+.flower {
+  position: absolute;
+  top: 40%;
+  @include heightWidth(30vw,1vw);
+  background: green;
+  animation: flowerAnimation 3s ease alternate;
+}
+
+@keyframes flowerAnimation {
+  from {
+    top: 80%;
+  }
+
+  to {
+    top: 40%;
+  }
+}
+
+.flower::after {
+  content: ' ';
+  position: absolute;
+  @include heightWidth(12vw,12vw);
+  background: purple;
+  border-radius: 100%;
+  left: -5rem;
+  top: -5rem;
+  animation: pulse 3s infinite ease-out alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.flower::before {
+  content: ' ';
+  position: absolute;
+  @include heightWidth(3vw,4vw);
+  background: rgb(4, 128, 0);
+  border-radius: 50% 17%;
+  left: 0.5rem;
+  top: 14rem;
+}
+
